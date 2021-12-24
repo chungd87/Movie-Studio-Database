@@ -8,6 +8,9 @@
   },
   "author": "Danny Chung",
   "license": "ISC",
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "browser-sync": "^2.27.4",
     "express": "^4.17.1",
