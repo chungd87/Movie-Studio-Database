@@ -2,7 +2,7 @@
   "name": "moviestudiodb",
   "version": "1.0.0",
   "description": "HW6",
-  "main": "exercise.js",
+  "main": "movieDB.js",
   "scripts": {
     "start": "node movieDB.js"
   },
