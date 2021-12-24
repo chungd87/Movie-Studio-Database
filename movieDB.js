@@ -732,6 +732,9 @@ app.post('/delete-stuntperson-actor-pair', function (req, res, next) {
 //END OF STUNTPERSON ACTOR MANAGEMENT FUNCTIONS ----------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------
 
-app.listen(app.get('port'), function () {
-    console.log('Express started on http://flip3.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl - C to terminate.');
+// app.listen(app.get('port'), function () {
+//     console.log('Express started on http://flip3.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl - C to terminate.');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${PORT}`);
 });
