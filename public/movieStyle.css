@@ -1,0 +1,108 @@
+#popupEditDirector, #popupEditStuntperson, #popupEditActor, #popupEditMovie {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    background-color: rgba(15, 19, 211, 0.7);
+}
+
+#editContent {
+    background-color: white;
+    margin: auto;
+    width: 70%;
+}
+
+
+h1 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    background-color: #1f62a1;
+    padding: 36px;
+    margin: -8px;
+}
+
+h2 {
+    padding: 20px 0px 0px 0px
+}
+
+p {
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+table, td, th {
+    border: 2px solid black;
+    background-color: #f5faff;
+    border-collapse: collapse;
+}
+
+
+body {
+    background-color: #e6f3ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    padding: 0px 0px 10px 0px;
+}
+
+nav {
+    display: block;
+    border-left-style: solid;
+    background-color: #689ccc;
+    margin: -12px -10px 0px -10px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+#returnHome {
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+a:link, a:visited, a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    padding-right: 100px;
+}
+
+
+a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+button {
+    background-color: #b3daff;
+    border: none;
+    color: black;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #cce6ff;
+    color: black;
+    padding: 5px 10px;
+}
+
+footer {
+    background-color: #f5faff;
+    border: none;
+    color: black;
+    text-align: center;
+}
+

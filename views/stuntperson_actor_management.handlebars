@@ -1,0 +1,29 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Stuntperson Actor Management</title>
+</head>
+
+<h1>View or Delete Stuntperson and Actor Pairings</h1>
+<br>
+
+<table width="100%">
+    <tr>
+        <th>Actor and Stuntperson Pair</th>
+        <th colspan="1">Management</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.actorFirstName}} {{this.actorLastName}} and {{this.stuntpersonFirstName}}
+            {{this.stuntpersonLastName}}</td>
+
+        <th><button type="button" value.actorFirstName={{this.actorFirstName}}
+                value.actorLastName={{this.actorLastName}} value.stuntpersonFirstName={{this.stuntpersonFirstName}}
+                value.stuntpersonLastName=={{this.stuntpersonLastName}} id="ASpairDelete{{this.actorLastName}}"
+                onclick="ASpairDelete('{{this.actorFirstName}}', '{{this.actorLastName}}', '{{this.stuntpersonFirstName}}', '{{this.stuntpersonLastName}}')">Remove
+                Pairing</button>
+        </th>
+    </tr>
+    {{/each}}
+</table>

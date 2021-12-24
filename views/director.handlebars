@@ -1,0 +1,27 @@
+﻿<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Directors</title>
+</head>
+
+<h1>Add Director to Database</h1>
+<br>
+<form id="add_director">
+    <fieldset>
+        <legend>Director</legend>
+        <label for="directorFirstName">First Name: </label>
+        <input id="directorFirstName" type="text" name="directorFirstName" required>
+        <br>
+        <label for="directorLastName">Last Name: </label>
+        <input id="directorLastName" type="text" name="directorLastName" required>
+        <br>
+        <label for="directorSalary">Salary: </label>
+        <input id="directorSalary" type="text" name="directorSalary" required>
+        <!--restrict to between 0 and 100,000-->
+        <br>
+        <input id="addDirector" type="submit" value="Add Director to Database">
+        <div id="director_display"></div>
+        <!--possible error display, may not need-->
+    </fieldset>
+</form>

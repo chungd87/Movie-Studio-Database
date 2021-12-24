@@ -1,0 +1,17 @@
+{
+  "name": "finalassign",
+  "version": "1.0.0",
+  "description": "HW6",
+  "main": "exercise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danny Chung",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.27.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.18.1"
+  }
+}

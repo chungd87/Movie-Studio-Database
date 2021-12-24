@@ -1,0 +1,31 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Stuntpersons</title>
+</head>
+
+<h1>Stuntpersons</h1>
+<br>
+<form>
+    <fieldset>
+        <legend>Stuntperson</legend>
+        <label for="stuntpersonFirstName">First Name: </label>
+        <input id="stuntpersonFirstName" type="text" name="stuntpersonFirstName" required>
+        <br>
+        <label for="stuntpersonLastName">Last Name: </label>
+        <input id="stuntpersonLastName" type="text" name="stuntpersonLastName" required>
+        <br>
+        <label for="stuntpersonSalary">Salary: </label>
+        <input id="stuntpersonSalary" type="text" name="stuntpersonSalary" required>
+        <!--restrict to between 0 and 100,000-->
+        <br>
+        <label for="stuntpersonAvailable">Available: </label>
+        <input id="stuntpersonAvailableYes" type="radio" name="stuntpersonAvailable" value="1"> Yes
+        <input id="stuntpersonAvailableNo" type="radio" value="1" name="stuntpersonAvailable"> No
+        <br>
+        <input id="addStuntperson" type="submit" value="Add Stuntperson to Database">
+        <div id="error"></div>
+        <!--possible error display, may not need-->
+    </fieldset>
+</form>

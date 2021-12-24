@@ -1,0 +1,36 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Actors</title>
+</head>
+
+<h1>Add Actor to Database</h1>
+<br>
+<form>
+    <fieldset>
+        <legend>Actor</legend>
+        <label for="actorFirstName">First Name: </label>
+        <input id="actorFirstName" type="text" name="actorFirstName">
+        <br>
+        <label for="actorLastName">Last Name: </label>
+        <input id="actorLastName" type="text" name="actorLastName">
+        <br>
+        <label for="actorSalary">Salary: </label>
+        <input id="actorSalary" type="text" name="actorSalary">
+        <!--restrict to between 0 and 100,000-->
+        <br>
+        <label for="director_name">Select Director:
+        </label>
+        <select name="director_name" id="director_names" required>
+		<option value=0>None</option>
+            {{#each results}}
+            	<option value={{this.directorID}}>{{this.director_name}}</option>
+            {{/each}}
+        </select>
+	<br>
+        <input id="addActor" type="submit" value="Add Actor to Database">
+        <div id="error"></div>
+        <!--possible error display, may not need-->
+    </fieldset>
+</form>

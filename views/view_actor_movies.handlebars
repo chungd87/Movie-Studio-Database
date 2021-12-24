@@ -1,0 +1,33 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>View Actor Movies</title>
+</head>
+
+<h1>View Actor's Movies</h1>
+
+{{#each actor}}
+<h2>{{this.actorFirstName}} {{this.actorLastName}}'s Movies</h2>
+{{/each}}
+
+<table id="viewTableMovies" width="100%">
+    <tr>
+        <th>MovieID</th>
+        <th>Movie Title</th>
+        <th>Movie Budget</th>
+    </tr>
+    {{#each movies}}
+    <tr>
+        <td>{{this.movieID}}</td>
+        <td>{{this.movieName}}</td>
+        <td>{{this.movieBudget}}</td>
+
+    </tr>
+    {{/each}}
+</table>
+
+
+<footer>
+    <p><a href="/view_actors">Back to Actors Page</a></p>
+</footer>

@@ -1,0 +1,55 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Director Info</title>
+</head>
+
+<h1>View Director</h1>
+
+{{#each director}}
+<h2>{{this.directorFirstName}} {{this.directorLastName}}'s Movies</h2>
+{{/each}}
+
+<table id="viewTableMovies" width="100%">
+    <tr>
+        <th>MovieID</th>
+        <th>Movie Title</th>
+        <th>Movie Budget</th>
+    </tr>
+    {{#each movies}}
+    <tr>
+        <td>{{this.movieID}}</td>
+        <td>{{this.movieName}}</td>
+        <td>{{this.movieBudget}}</td>
+
+    </tr>
+    {{/each}}
+</table>
+
+{{#each director}}
+<h2>{{this.directorFirstName}} {{this.directorLastName}}'s Actors</h2>
+{{/each}}
+
+<table id="viewTableActors" width="100%">
+    <tr>
+        <th>actorID</th>
+        <th>Actor First Name</th>
+        <th>Actor Last Name</th>
+        <th>Actor Salary</th>
+    </tr>
+    {{#each actors}}
+    <tr>
+        <td>{{this.actorID}}</td>
+        <td>{{this.actorFirstName}}</td>
+        <td>{{this.actorLastName}}</td>
+        <td>{{this.actorSalary}}</td>
+
+    </tr>
+    {{/each}}
+</table>
+
+
+<footer>
+    <p><a href="/view_directors">Back to Director Page</a></p>
+</footer>

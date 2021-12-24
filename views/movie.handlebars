@@ -1,0 +1,29 @@
+﻿<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Movies</title>
+</head>
+
+<h1>Movies</h1>
+<br>
+<form>
+    <fieldset>
+        <legend>Movie</legend>
+        <label for="movieName">Title: </label>
+        <input id="movieName" type="text" name="movieName" required>
+        <br>
+        <label for="movieBudget">Budget: </label>
+        <input id="movieBudget" type="text" name="movieBudget" required>
+        <br>
+        <label for="director_name">Select Director:
+        </label>
+        <select name="director_name" id="director_names_movies" required>
+            {{#each results}}
+            <option value={{this.directorID}}>{{this.director_name}}</option>
+            {{/each}}
+        </select>
+        <div>(At least one director must have been entered into the database.)</div>
+        <input id="addMovie" type="submit" value="Add Movie to Database">
+    </fieldset>
+</form>

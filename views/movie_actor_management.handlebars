@@ -1,0 +1,40 @@
+﻿<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Movie Actor Management</title>
+</head>
+
+<h1>Delete Movie and Actor Pairings</h1>
+<br>
+
+<form id="search_movie_actors" method="GET" action="/movie_actor_management">
+
+    <label for="movieSearch">Search Movie Actor pairings by Movie Title</label>
+    <input id="movieName" type="text" name="movieName">
+    <input type="submit" value="Search">
+    <a href="/movie_actor_management">
+        <button>Reset Search</button>
+    </a>
+    <br>
+
+</form>
+
+<table width="100%">
+    <tr>
+        <th>Movie</th>
+        <th>Actor</th>
+        <th colspan="1">Management</th>
+    </tr>
+    {{#each results}}
+    <tr>
+	<td>{{this.movieName}}</td>
+        <td>{{this.actorFirstName}} {{this.actorLastName}}</td>
+
+        <th><button type="button" value.movieID={{this.movieID}} value.actorID={{this.actorID}} id="MApairDelete{{this.actorFirstName}} {{this.actorLastName}} and {{this.movieName}}"
+                onclick="MApairDelete('{{this.movieID}}', '{{this.actorID}}')">Remove
+                Pairing</button>
+        </th>
+    </tr>
+    {{/each}}
+</table>

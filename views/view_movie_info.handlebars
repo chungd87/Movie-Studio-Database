@@ -1,0 +1,41 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Movie Info</title>
+</head>
+
+<h1>View Movies</h1>
+
+{{#each totalBudget}}
+<h3 style="color:red;">${{movieBudget}} is the total budget for this movie.</h3>
+{{/each}}
+<h4 style="color:red;">The directors, actors, and stuntpersons salaries total to ${{total}}</h4>
+
+{{#each movie}}
+<h2>{{this.movieName}} Actors</h2>
+{{/each}}
+
+<table id="viewTableActors" width="100%">
+    <tr>
+        <th>actorID</th>
+        <th>Actor First Name</th>
+        <th>Actor Last Name</th>
+        <th>Actor Salary</th>
+    </tr>
+    {{#each actors}}
+    <tr>
+        <td>{{this.actorID}}</td>
+        <td>{{this.actorFirstName}}</td>
+        <td>{{this.actorLastName}}</td>
+        <td>{{this.actorSalary}}</td>
+
+    </tr>
+    {{/each}}
+</table>
+
+
+
+<footer>
+    <p><a href="/view_movies">Back to Movies Page</a></p>
+</footer>

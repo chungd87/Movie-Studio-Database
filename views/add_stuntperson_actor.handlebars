@@ -1,0 +1,30 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Stuntperson Actor Pairs</title>
+</head>
+
+<h1>Add Stuntperson and Actor Pairing</h1>
+<br>
+<form>
+    <fieldset>
+        <label for="actor_name">Select Actor:
+        </label>
+        <select name="actor_name" id="actor_names" required>
+            {{#each actor_names}}
+            <option value={{this.actorID}}>{{this.actor_name}}</option>
+            {{/each}}
+        </select>
+        <div>(At least one actor must have been entered into the database.)</div>
+        <label for="stuntpesron_name">Select Stuntperson:
+        </label>
+        <select name="stuntperson_name" id="stuntperson_names" required>
+            {{#each stuntperson_names}}
+            <option value={{this.stuntpersonID}}>{{this.stuntperson_name}}</option>
+            {{/each}}
+        </select>
+        <div>(At least one stuntperson must have been entered into the database.)</div>
+        <input id="add_actor_stuntperson_pairing" type="submit" value="Add Actor and Stuntperson Pairing">
+    </fieldset>
+</form>

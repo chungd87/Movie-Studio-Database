@@ -1,0 +1,79 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Stuntperson Management</title>
+</head>
+
+<h1>Stuntperson Management</h1>
+
+<h2>View, Edit, or Delete Stuntpersons</h2>
+
+<form id="search_stuntperson" method="GET" action="/view_stuntpersons">
+
+    <label for="stuntpersonSearch">Search Stuntpersons (by first or last name)</label>
+    <input id="name" type="text" name="name">
+    <input type="submit">
+    <a href="/view_stuntpersons">
+        <button>Reset Search</button>
+    </a>
+    <br>
+
+</form>
+<table width="100%">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>Availability (1 = Available, 0 = Unavailable)</th>
+        <th colspan="2">Management</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.stuntpersonID}}</td>
+        <td>{{this.stuntpersonFirstName}}</td>
+        <td>{{this.stuntpersonLastName}}</td>
+        <td>{{this.stuntpersonSalary}}</td>
+        <td>{{this.stuntpersonAvailable}}</td>
+
+        <th><button type="button" value={{this.stuntpersonID}} id="stuntpersonDelete{{this.stuntpersonID}}"
+                onclick="deleteStuntperson({{this.stuntpersonID}})">Delete</button></th>
+        <th><button type="button" value={{this.stuntpersonID}} id="stuntpersonEdit{{this.stuntpersonID}}"
+                onclick="openEditStuntperson({{this.stuntpersonID}}, '{{this.stuntpersonFirstName}}', '{{this.stuntpersonLastName}}', {{this.stuntpersonSalary}}, {{this.stuntpersonAvailable}})">Edit</button></th>
+    </tr>
+    {{/each}}
+</table>
+
+
+<div id="popupEditStuntperson">
+    <div id="editContent">
+        <form>
+            <fieldset id="edit_stuntperson_field">
+                <legend>Edit Stuntperson</legend>
+                <label for="stuntpersonFirstNameEditInput">First Name: </label>
+                <input id="stuntpersonFirstNameEditInput" type="text" name="stuntpersonFirstNameEditInput" required>
+                <br>
+                <label for="stuntpersonLastNameEditInput">Last Name: </label>
+                <input id="stuntpersonLastNameEditInput" type="text" name="stuntpersonLastNameEditInput" required>
+                <br>
+                <label for="stuntpersonSalaryEditInput">Salary: </label>
+                <input id="stuntpersonSalaryEditInput" type="text" name="stuntpersonSalaryEditInput" required>
+                <!--restrict to between 0 and 100,000-->
+                <br>
+                <label for="stuntpersonAvailableEditInput">Available: </label>
+                <input id="stuntpersonAvailableEditInputYes" type="radio" name="stuntpersonAvailableEditInput"
+                    value="1">
+                Yes
+                <input id="stuntpersonAvailableEditInputNo" type="radio" value="0" name="stuntpersonAvailableEditInput">
+                No
+                <br>
+                <button id="close_edit_stuntperson" onclick="closeEditStuntperson()">Close</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p><a href="/stuntperson">Add Stuntperson</a></p>
+</footer>

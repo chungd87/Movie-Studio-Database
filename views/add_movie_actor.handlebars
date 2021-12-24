@@ -1,0 +1,30 @@
+﻿<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Add Movie Actor Pairs</title>
+</head>
+
+<h1>Add Movie and Actor Pairing</h1>
+<br>
+<form>
+    <fieldset>
+        <label for="movieName">Select Movie:
+        </label>
+        <select name="movieName" id="movieNames" required>
+            {{#each movies}}
+            <option value={{this.movieID}}>{{this.movieName}}</option>
+            {{/each}}
+        </select>
+        <div>(At least one movie must have been entered into the database.)</div>
+        <label for="actorName">Select Actor:
+        </label>
+        <select name="actorName" id="actorNames" required>
+            {{#each actors}}
+            <option value={{this.actorID}}>{{this.actorName}}</option>
+            {{/each}}
+        </select>
+        <div>(At least one actor must have been entered into the database.)</div>
+        <input id="add_movie_actor_pairing" type="submit" value="Add Movie and Actor Pairing">
+    </fieldset>
+</form>

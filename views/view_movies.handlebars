@@ -1,0 +1,83 @@
+<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+    <title>Movie Management</title>
+</head>
+
+<h1>Movie Management</h1>
+
+<h2>View, Edit, or Delete Movies</h2>
+
+<h3 style="color:red;">{{budget}} have been allocated out of $10,000,000 budget.</h3>
+
+<form id="search_movie" method="GET" action="/view_movies">
+
+    <label for="movieSearch">Search Movies (by all or part of movie name)</label>
+    <input id="name" type="text" name="name">
+    <input type="submit">
+    <a href="/view_movies">
+        <button>Reset Search</button>
+    </a>
+    <br>
+
+</form>
+<table width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Movie Name</th>
+        <th>Budget</th>
+        <th>Director</th>
+        <th colspan="3">Management</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.movieID}}</td>
+        <td>{{this.movieName}}</td>
+        <td>{{this.movieBudget}}</td>
+        <td>{{this.directorFirstName}} {{this.directorLastName}}</td>
+        <th>
+            <form method='GET' action='/view_movie_info'>
+
+                <button type="submit" name="movieID" value={{this.movieID}}>View</button>
+
+            </form>
+        </th>
+        <th><button type="button" value={{this.movieID}} id="movieDelete{{this.movieID}}"
+                onclick="deleteMovie({{this.movieID}})">Delete</button></th>
+        <th><button type="button" value={{this.movieID}} id="movieEdit{{this.movieID}}"
+                onclick="openEditMovie({{this.movieID}}, '{{this.movieName}}', {{this.movieBudget}}, {{this.directorID}})">Edit</button>
+        </th>
+    </tr>
+    {{/each}}
+</table>
+
+
+<div id="popupEditMovie">
+    <div id="editContent">
+        <form>
+            <fieldset id="edit_movie_field">
+                <legend>Edit Movie</legend>
+                <label for="movieNameEditInput">Movie Name: </label>
+                <input id="movieNameEditInput" type="text" name="movieNameEditInput" required>
+                <br>
+                <label for="movieBudgetEditInput">Budget: </label>
+                <input id="movieBudgetEditInput" type="text" name="movieBudgetEditInput" required>
+                <br>
+                <label for="director_name_edit">Select Director:
+                </label>
+                <select name="director_name_edit" id="director_names_edit_movie" required>
+                    {{#each resultsDirectors}}
+                    <option value={{this.directorID}}>{{this.director_name}}</option>
+                    {{/each}}
+                </select>
+                <div>(At least one director must have been entered into the database.)</div>
+                <button id="close_edit_movie" onclick="closeEditMovie()">Close</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p><a href="/movie">Add Movie</a></p>
+</footer>

@@ -1,0 +1,84 @@
+﻿<!-- Danny Chung || chungdan@oregonstate.edu || CS340-->
+<!-- Hailee Hibray || hibrayh@oregonstate.edu || CS340-->
+
+<head>
+  <title>Director Management</title>
+</head>
+
+<h1>Director Management</h1>
+
+<h2>View, Edit, or Delete Directors</h2>
+
+<form id="search_director" method="GET" action="/view_directors">
+
+    <label for="directorSearch">Search Directors (by first or last name)</label>
+    <input id="name" type="text" name="name">
+    <input type="submit">
+    <a href="/view_directors">
+        <button>Reset Search</button>
+    </a>
+    <br>
+
+</form>
+<table width="100%">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th colspan="3">Management</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.directorID}}</td>
+        <td>{{this.directorFirstName}}</td>
+        <td>{{this.directorLastName}}</td>
+        <td>{{this.directorSalary}}</td>
+        <th>
+            <form method='GET' action='/view_director_movies'>
+
+                <button type="submit" name="directorID" value={{this.directorID}}>View</button>
+
+            </form>
+        </th>
+        <th>
+            <button type="button" value={{this.directorID}} id="directorDelete{{this.directorID}}"
+                    onclick="deleteDirector({{this.directorID}})">
+                Delete
+            </button>
+        </th>
+        <th>
+            <button type="button" value={{this.directorID}} id="directorEdit{{this.directorID}}"
+                    onclick="openEdit({{this.directorID}},'{{this.directorFirstName}}','{{this.directorLastName}}',{{this.directorSalary}})">
+                Edit
+            </button>
+        </th>
+    </tr>
+    {{/each}}
+</table>
+
+
+<div id="popupEditDirector">
+    <div id="editContent">
+        <form>
+            <fieldset id="edit_director_field">
+                <legend>Edit Director</legend>
+                <label for="directorFirstNameEditInput">First Name: </label>
+                <input id="directorFirstNameEditInput" type="text" name="directorFirstNameEditInput" required>
+                <br>
+                <label for="directorLastNameEditInput">Last Name: </label>
+                <input id="directorLastNameEditInput" type="text" name="directorLastNameEditInput" required>
+                <br>
+                <label for="directorSalaryEditInput">Salary: </label>
+                <input id="directorSalaryEditInput" type="text" name="directorSalaryEditInput" required>
+                <!--restrict to between 0 and 100,000-->
+                <br>
+                <button id="close_edit_director" onclick="closeEdit()">Close</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p><a href="/director">Add Director</a></p>
+</footer>
