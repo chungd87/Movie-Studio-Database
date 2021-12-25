@@ -17,6 +17,9 @@
     width: 70%;
 }
 
+body {
+    min-width: 1400px;
+  }
 
 h1 {
     color: white;
