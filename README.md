@@ -4,12 +4,12 @@ You run a movie studio, and you need a searchable web application database that 
 
 ### Link to Live Version
 https://moviedatabasedb.herokuapp.com/
-<br>
+<br><br>
 ### DATABASE: Entity-Relationship Diagram and Schema
 
 ![image](https://user-images.githubusercontent.com/67284108/171338045-097ef8a1-98f5-4248-8761-38bbb7bd9317.png)
 
-
+<br><br>
 
 ### Movie Database Management Pages
 
