@@ -1,6 +1,6 @@
 # Movie Studio Database WebApp
 ## SCENARIO
-You run a movie studio, and you need a searchable web application database that can track your budget along with your movies, directors, actors, and stuntpersons.
+You run a movie studio, and you need a searchable web application database that can track your budget along with your movies, directors, actors, stuntpersons, along with their salaries and relationships.
 
 ### Link to Live Version
 https://moviedatabasedb.herokuapp.com/
