@@ -16,11 +16,14 @@ https://moviedatabasedb.herokuapp.com/
 #### Homepage and Functionality
 ![image](https://user-images.githubusercontent.com/67284108/171338530-98a4cac2-583f-4e02-b6a4-db23fabf819f.png)
 
+
 #### Movie Management Sample
 ![image](https://user-images.githubusercontent.com/67284108/171338971-5ab65712-5abd-4d14-8b29-5e041957e1de.png)
 
+
 ##### Add a Movie
 ![image](https://user-images.githubusercontent.com/67284108/171339258-bc87ff0b-02c5-4638-a58b-9051174c1e06.png)
+
 
 ##### Edit a Movie
 ![image](https://user-images.githubusercontent.com/67284108/171339403-346e7a04-c1cf-49ac-b4f2-e89d10fdf896.png)
